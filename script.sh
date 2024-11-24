@@ -31,6 +31,7 @@ CONTINUE=false
 read -p "Veuillez écrire le nom du logiciel que vous souhaitez consulter : " LOGICIEL
 grep -A 5 -i "Package: $LOGICIEL" /var/lib/dpkg/status
 if [ $? -ne 0 ]
+then
 echo "ERREUR : le $LOGICIEL n'a pas été trouvé, veuillez réessayer."
 echo "Peut-être que le logiciel n'est pas installé, n'hésitez pas à consulter la liste complète"
 else 
