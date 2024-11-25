@@ -111,7 +111,7 @@ function supprimer_logiciel(){
 echo "Pour supprimer un logiciel, vous devez avoir les droits admin pour le faire."
 read -p "Veuillez préciser le chemin relatif du logiciel à désinstaller : " LOGICIEL
 read -p "Êtes-vous sur de vouloir désinstaller ce logiciel ? Yes or No " REPONSE
-if [ $REPONSE=="Yes" ]
+if [[ $REPONSE=="Yes" && -e ~/bin/$LOGICIEL ]]
 then 
 sudo apt-get remove $LOGICIEL
 fi
